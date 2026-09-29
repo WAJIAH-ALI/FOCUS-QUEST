@@ -13,8 +13,8 @@ down_revision = "0001_create_users"
 branch_labels = None
 depends_on = None
 
-growth_stage_enum = sa.Enum("egg", "hatchling", "juvenile", "adult", name="growth_stage")
-pet_mood_enum = sa.Enum("happy", "neutral", "sad", "hungry", name="pet_mood")
+growth_stage_enum = postgresql.ENUM("egg", "hatchling", "juvenile", "adult", name="growth_stage", create_type=False)
+pet_mood_enum = postgresql.ENUM("happy", "neutral", "sad", "hungry", name="pet_mood", create_type=False)
 
 
 def upgrade() -> None:

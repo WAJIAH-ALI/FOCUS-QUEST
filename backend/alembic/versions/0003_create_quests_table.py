@@ -13,9 +13,9 @@ down_revision = "0002_create_pets"
 branch_labels = None
 depends_on = None
 
-difficulty_enum = sa.Enum("easy", "medium", "hard", "extreme", "extreme_final_boss", name="quest_difficulty")
-status_enum = sa.Enum("incomplete", "done", name="quest_status")
-priority_enum = sa.Enum("low", "medium", "high", "critical", "critical_final_boss", name="quest_priority")
+difficulty_enum = postgresql.ENUM("easy", "medium", "hard", "extreme", "extreme_final_boss", name="quest_difficulty", create_type=False)
+status_enum = postgresql.ENUM("incomplete", "done", name="quest_status", create_type=False)
+priority_enum = postgresql.ENUM("low", "medium", "high", "critical", "critical_final_boss", name="quest_priority", create_type=False)
 
 
 def upgrade() -> None:
